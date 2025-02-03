@@ -13,7 +13,10 @@ public class RecommendService {
 	private final WebClient webClient;
 
 	public RecommendService(WebClient.Builder webClientBuilder) {
-	        this.webClient = webClientBuilder.baseUrl("http://localhost:8000").build();
+		/*
+		 * this.webClient = webClientBuilder.baseUrl("http://localhost:8000").build();
+		 */
+		this.webClient = webClientBuilder.baseUrl("https://python-q9k6.onrender.com").build();
 	}
 
 	public Mono<Map> getRecommendations(String guestId, String preferences) {

@@ -10,7 +10,8 @@ public class WebClientConfig {
 	@Bean
 	public WebClient webClient() {
 		return WebClient.builder()
-				.baseUrl("http://localhost:8000")
+				.baseUrl("https://python-q9k6.onrender.com")
+				/* .baseUrl("http://localhost:8000") */
 				.build();
 	}
 }
