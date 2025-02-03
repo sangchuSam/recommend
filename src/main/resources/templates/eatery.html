@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Simple Eatery Recommendation</title>
+</head>
+<body>
+
+guest id : <span id="guestId">로딩 중...</span></p>
+
+<select id="gender">
+  <option value="">성별 선택</option> 
+  <option value="female">여자</option> 
+  <option value="male">남자</option> 
+</select>
+
+<select id="ageGroup"> 
+  <option value="">나이 선택</option> 
+  <option value="0">0대</option> 
+  <option value="10">10대</option> 
+  <option value="20">20대</option> 
+  <option value="30">30대</option> 
+  <option value="40">40대</option> 
+  <option value="50">50대</option> 
+  <option value="60">60대</option> 
+  <option value="70">70대</option> 
+  <option value="80">80대</option> 
+  <option value="90">90+대</option> 
+</select>
+
+<select id="preferences">
+  <option value="">카테고리 선택</option> 
+  <option value="korean">한식</option> 
+  <option value="chinese">중식</option> 
+  <option value="japan">일식</option> 
+  <option value="western">양식</option> 
+  <option value="cafe">카페</option> 
+  <option value="etc">기타</option> 
+</select>
+
+<button type="button" onclick="saveGuest()">사용자 정보 전달하기</button>
+ 
+<button type="button" onclick="fetchRecommendations()">음식점 추천 받기</button>
+
+<h3>추천된 음식점</h3>
+
+    <p id="noRecommendations">❌ 추천된 음식점이 없습니다.</p>
+
+
+<ul id="recommendations" style="display: none;">
+    <li th:each="recommendation : ${recommendations}">
+        <span th:text="${recommendation.restaurantId}"></span> -
+        <span th:text="${recommendation.name}"></span> -
+        <span th:text="${recommendation.category}"></span> -
+        <span th:text="${recommendation.priceLevel}"></span>
+    </li>
+</ul> 
+
+<script src="js/eatery.js"></script>
+
+
+</body>
+</html>

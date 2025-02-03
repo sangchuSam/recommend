@@ -1,0 +1,16 @@
+target/
+build/
+.gradle/
+.settings/
+*.iml
+*.log
+*.class
+
+target/
+build
+.gradle/
+.settings/
+*.class
+!src/
+!pom.xml
+!gradle.build
